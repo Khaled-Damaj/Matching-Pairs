@@ -70,6 +70,13 @@ body {
   cursor: pointer;
 }
 
+@media (max-width: 500px) {
+  .control-button span {
+    font-size: 18px;
+    padding: 10px 20px;
+  }
+}
+
 .game-info {
   padding: 10px 20px;
   display: flex;
@@ -95,9 +102,11 @@ body {
   display: flex;
   flex-wrap: wrap;
 }
+
 .game-container.stop-responsing {
   pointer-events: none;
 }
+
 .game-container .game-box {
   transition: transform 0.3s;
   transform-style: preserve-3d;
@@ -142,6 +151,31 @@ body {
     font-size: 120px;
   }
 }
+
+.game-container .game-box img {
+  width: 140px;
+  height: 140px;
+  margin-top: 30px;
+}
+
+.game-container .game-box .back {
+  background-color: #607d60;
+  transform: rotatey(180deg);
+}
+
+@media (max-width: 991px) {
+  .game-info {
+    flex-direction: column;
+    gap: 15px;
+  }
+  .game-container .game-box {
+    width: calc(100% / 4);
+  }
+  .game-container .game-box .front::before {
+    font-size: 120px;
+  }
+}
+
 @media (max-width: 500px) {
   .game-container .game-box {
     width: calc(100% / 2);
@@ -149,13 +183,8 @@ body {
   .game-container .game-box .front::before {
     font-size: 100px;
   }
-}
-.game-container .game-box .back {
-  background-color: #607d60;
-  transform: rotatey(180deg);
-}
-.game-container .game-box img {
-  width: 140px;
-  height: 140px;
-  margin-top: 30px;
+  .game-container .game-box img {
+    width: 100px;
+    height: 100px;
+  }
 }
